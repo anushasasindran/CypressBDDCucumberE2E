@@ -1,0 +1,30 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean-up": "powershell -Command \"Remove-Item -Path 'cypress/results/*' -Recurse -Force; Get-ChildItem -Filter 'mochawesome-*.json' | Remove-Item\"",
+    "APICLtest": "npx cypress run --spec 'cypress/e2e/order-api-features.js'",
+    "UICLtest": "npx cypress run --spec 'cypress/e2e/order-ui-features.js'",
+    "testrunner": "npx cypress open",
+    "APIchromeTest": "npx cypress run --headed --browser chrome --spec 'cypress/e2e/order-api-features.js'",
+    "UIchromeTest": "npx cypress run --headed --browser chrome --spec 'cypress/e2e/order-ui-features.js'",
+    "mochawesome-merge_old": "npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome.json && npx marge mochawesome.json",
+    "mochawesome-merge": "node -e \"let now = new Date(); let timestamp = now.getFullYear() + '_' + ('0' + (now.getMonth()+1)).slice(-2) + '_' + ('0' + now.getDate()).slice(-2) + '_' + ('0' + ((now.getHours() % 12) || 12)).slice(-2) + '.' + ('0' + now.getMinutes()).slice(-2) + (now.getHours() < 12 ? 'AM' : 'PM'); require('child_process').execSync('npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome-' + timestamp + '.json && npx marge mochawesome-' + timestamp + '.json')\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^12.16.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-multi-reporters": "^1.6.3",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "stepDefinitions": "cypress/e2e/project/stepDefinitions"
+  }
+}
