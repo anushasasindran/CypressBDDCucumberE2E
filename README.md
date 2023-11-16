@@ -1,8 +1,8 @@
 # **CypressBDDCucumberE2E**
 This repository features a comprehensive Cypress framework integrated with BDD using Cucumber, designed for end-to-end testing of a sample project. It encompasses UI, API, and XHR testing, providing robust examples of behavior-driven development in action.
 # **Description**
-This Cypress testing framework is designed to cover end-to-end testing of a sample application that includes user registration, login, note creation, editing, retrieval, and deletion. It incorporates: 
-**Cucumber BDD** : Using cucumber feature files and step definitions files 
+This Cypress testing framework is designed to cover end-to-end testing of a sample application that includes user registration, login, note creation, editing, retrieval, and deletion. It incorporates:  
+**Cucumber BDD** : Using cucumber feature files and step definitions files.  
 **API Testing**: Testing endpoints for user registration, login, note operations, and authentication token generation.  
 **UI Testing**: Utilizing the Page Object Model to perform end-to-end UI tests from user registration to note deletion.  
 **XHR Testing**: Integrated with UI testing to validate XHR (XMLHttpRequest) calls.  
@@ -26,13 +26,13 @@ npm install cypress --save-dev : This installs the latest cypress version
 npm install cypress@12.16.0 : If you want any specific cypress version to download  
 	Node modules folder is created once the cypress is installed  
 Install Cucumber with Cypress using npm install --save-dev cypress-cucumber-preprocessor.
-npx cypress open : This open the cypress test runner and to configure framework  
-**Feature Files**
-Write Gherkin syntax in .feature files located in the cypress/e2e/project/features.
-**Step Definitions**
-Implement step definitions in JavaScript files within the cypress/e2e/project/stepDefinitions folder.
-**Configuration**
-Update cypress.json and package.json to include cucumber preprocessor settings.
+npx cypress open : This open the cypress test runner and to configure framework   
+**Feature Files**  
+Write Gherkin syntax in .feature files located in the cypress/e2e/project/features.  
+**Step Definitions**  
+Implement step definitions in JavaScript files within the cypress/e2e/project/stepDefinitions folder.  
+**Configuration**  
+Update cypress.json and package.json to include cucumber preprocessor settings.  
 
 # **How to run cypress tests**  
 **Using cypress test runner** : npx cypress open command to open test runner. Click on each spec files and run it.   
